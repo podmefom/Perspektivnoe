@@ -1,0 +1,24 @@
+{
+    "users": [
+        {
+            "id": "1",
+            "login": "1",
+            "name": "1",
+            "surname": "1",
+            "password": "1",
+            "mmr": "1"
+            
+        }
+    ],
+
+    "heroes": [
+        {
+            "id": "1",
+            "name": "1",
+            "description": "1",
+            "img": "",
+            "userId": "1"
+
+        }
+    ]
+}
