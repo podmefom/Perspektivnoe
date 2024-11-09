@@ -1,20 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import styles from './Header.module.scss';
 import Modal from "../Modal/Modal";
-import { useSelector, useDispatch } from "react-redux"
-import { Store } from "../../interfaces/Store";
+import {  useDispatch } from "react-redux"
 import { changeActive, changeAuth } from "../../store/modal/modal.slice";
 
 
 const Header = () => {
-    const token = "dljkfal;faldsjfk";
+    const token = null;
     const navigate = useNavigate();
 
-    const modal = useSelector((store: Store) => store.modal)
     const dispatch = useDispatch()
 
-
-    console.log(modal)
+    
 
     return (
         <>
@@ -33,8 +30,14 @@ const Header = () => {
             
                     {!token ? (
                         <>
-                            <button onClick={() => navigate("/login")}>Логин</  button>
-                            <button onClick={() => navigate("/register")}   >Зарегаться</button>
+                            <button onClick={() => {
+                                dispatch(changeActive(true))
+                                dispatch(changeAuth(false))
+                            }}>Логин</button>
+                            <button onClick={() => {
+                                dispatch(changeActive(true))
+                                dispatch(changeAuth(true))
+                            }}>Зарегаться</button>
                         </>
                     ) : (
                         <>
@@ -42,9 +45,7 @@ const Header = () => {
                             <button>Выход</button>
                         </>
                     )}
-                    <button onClick={() => {
-                        dispatch(changeActive(true))
-                    }}>Модальное</button>
+                    
                 </nav>
             </header>
         </>
