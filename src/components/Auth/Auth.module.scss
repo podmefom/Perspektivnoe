@@ -1,0 +1,27 @@
+.form  {
+
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+
+    button {
+        width: 100%;
+    }
+    
+    input {
+        width: 250px;
+        height: 30px;
+        background: none;
+        border-radius: 4px;
+    }
+    
+    &::placeholder {
+        font-size: 16px;
+    }
+
+    h2 {
+        margin: 0;
+        border: none;
+    }
+}
+

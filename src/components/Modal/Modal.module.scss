@@ -1,0 +1,78 @@
+.container {
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    
+    align-items: center;
+    justify-content: center;
+    
+    animation: close-modal 0.15s linear forwards;
+    &::backdrop {
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    &[open] {
+        display: flex;
+        animation: open-modal 0.15s linear forwards;
+        
+    }
+
+}
+
+@keyframes open-modal {
+    0% {
+        background: rgba(0, 0, 0, 0);;
+    }
+    100% {
+        background: rgba(0, 0, 0, 0.6)
+    }
+}
+
+
+
+
+
+
+.modal {
+    border: 3px solid black;
+    border-radius: 15px;
+    padding: 30px;
+    position: relative;
+
+    background: rgba(255, 255, 255);
+    opacity: 0;
+
+    animation: open 0.15s linear forwards;
+}
+
+
+@keyframes open {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.close {
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000000;
+    font-size: 20px;
+    right: 30px;
+    top: 33px;
+   
+    
+    transition: color 0.2s linear;
+    &:hover {
+        color: #888;
+    }
+}
