@@ -26,7 +26,7 @@ const HeroPage = () => {
     return ( 
         <div className={styles.container}>
             {heroData.map((hero: HeroDB) => (
-                <HeroCard key={hero.id} name={hero.name} description={hero.description} img={hero.img} type={hero.type} />
+                <HeroCard key={hero.id} name={hero.name} description={hero.description} img={hero.img} type={hero.type}/>
             ))}
         </div>
      );

@@ -6,11 +6,11 @@ import { changeActive, changeAuth } from "../../store/modal/modal.slice";
 
 
 const Header = () => {
+
     const token = localStorage.getItem("token");
     const navigate = useNavigate();
 
     const dispatch = useDispatch()
-
     const exit = () => {
         localStorage.clear();
         window.location.reload();
