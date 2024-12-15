@@ -5,6 +5,7 @@ import './index.scss'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import MainPage from './components/MainPage/MainPage.tsx'
 import HeroPage from './components/HeroPage/HeroPage.tsx'
+import Profile from './components/Profile/Profile.tsx'
 import { Provider } from 'react-redux'
 import { store } from "./store/store.ts"
 
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
         element: <HeroPage />,
       },
 
+      {
+        path: "/profile",
+        element: <Profile/>,
+      }
     ]
   }
 ])

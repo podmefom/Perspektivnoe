@@ -29,7 +29,7 @@ const Modal = () => {
                             X
                         </div>
                         {modal.authActive ? (<Registration/>) : (<Login/>)}
-                </div>
+                    </div>
             </dialog>
 
         </>

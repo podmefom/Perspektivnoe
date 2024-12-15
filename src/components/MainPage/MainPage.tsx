@@ -1,7 +1,7 @@
 const MainPage = () => {
     return ( 
         <div>
-            
+            Всем ку
         </div>
      );
 }

@@ -47,9 +47,11 @@
     opacity: 0;
 
     animation: open 0.15s linear forwards;
+
+    max-width: 400px;
+    width: 100%;
+
 }
-
-
 @keyframes open {
     0% {
         opacity: 0;

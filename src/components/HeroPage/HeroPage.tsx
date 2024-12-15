@@ -1,15 +1,18 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import { getHeroes } from "../../api/hero.api";
+import styles from "./HeroPage.module.scss"
+import HeroCard from "../HeroCard/HeroCard";
+import { HeroDB } from "../../interfaces/Hero";
 
 const HeroPage = () => {
 
-    const [heroData, setHeroData] = useState(null);
+    const [heroData, setHeroData] = useState<HeroDB[]>([]);
      
     useEffect(() => {
         const fetchHeroData = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/heroes');
-                setHeroData(response.data);
+                const result = await getHeroes();
+                setHeroData(result);
             } catch (error) {
                 console.log(error);
             } 
@@ -21,10 +24,14 @@ const HeroPage = () => {
     console.log(heroData)
 
     return ( 
-        <div>
-
+        <div className={styles.container}>
+            {heroData.map((hero: HeroDB) => (
+                <HeroCard key={hero.id} name={hero.name} description={hero.description} img={hero.img} type={hero.type} />
+            ))}
         </div>
      );
 }
  
+
+
 export default HeroPage;

@@ -6,12 +6,15 @@ import { changeActive, changeAuth } from "../../store/modal/modal.slice";
 
 
 const Header = () => {
-    const token = null;
+    const token = localStorage.getItem("token");
     const navigate = useNavigate();
 
     const dispatch = useDispatch()
 
-    
+    const exit = () => {
+        localStorage.clear();
+        window.location.reload();
+    }
 
     return (
         <>
@@ -21,7 +24,7 @@ const Header = () => {
                 
                 <img onClick={() => {
                     navigate("/")
-                }} className={styles.logo} src="./image/PudgeLogo.png" alt="Logo" />
+                }} className={styles.logo} src="/images/PudgeLogo.png" alt="Logo" />
                 
                 <nav className={styles.nav}>
                     <button onClick={() => navigate("/heroes")}>
@@ -42,7 +45,7 @@ const Header = () => {
                     ) : (
                         <>
                             <button onClick={() => navigate("/profile")}>Профиль</  button>
-                            <button>Выход</button>
+                            <button onClick={exit}>Выход</button>
                         </>
                     )}
                     

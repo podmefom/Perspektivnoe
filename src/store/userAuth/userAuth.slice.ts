@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { UserAuthObject } from "../../interfaces/User";
 
-
 const initialState: UserAuthObject = {
     userLogin: {
         login: "",
@@ -14,23 +13,20 @@ const initialState: UserAuthObject = {
         mmr: "",
         password: ""
     }
-}
+};
 
 const userAuthSlice = createSlice({
     name: "userAuth",
     initialState,
     reducers: {
-        
         changeLogin(state, action) {
             state.userLogin = action.payload;
         },
-
         changeRegister(state, action) {
-            state.userRegister = action.payload;    
+            state.userRegister = action.payload;
         }
     }
-})
+});
 
-
-export const {changeLogin, changeRegister} = userAuthSlice.actions;
+export const { changeLogin, changeRegister } = userAuthSlice.actions;
 export default userAuthSlice.reducer;

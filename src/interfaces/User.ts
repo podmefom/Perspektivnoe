@@ -19,7 +19,8 @@ export interface UserDB {
     login: string,
     name: string,
     surname: string,
-    mmr: number
+    password: string,
+    mmr: string
 }
 
 
