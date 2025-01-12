@@ -1,28 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Modal } from "../../interfaces/Modal";
+import { Modal as ModalInterface } from "../../interfaces/Modal";
 
-
-const initialState: Modal = {
+const initialState: ModalInterface = {
     isActive: false,
-    authActive: false
-}
-
+    authActive: false,
+    addHeroActive: false
+};
 
 const modalSlice = createSlice({
     name: "modal",
     initialState,
     reducers: {
         changeActive(state, action) {
-            state.isActive = action.payload
+            state.isActive = action.payload;
         },
-
         changeAuth(state, action) {
-            state.authActive = action.payload
+            state.authActive = action.payload;
+        },
+        changeAddHeroActive(state, action) {
+            state.addHeroActive = action.payload;
         }
-
     }
-})
+});
 
-
-export const { changeActive, changeAuth } = modalSlice.actions
-export default modalSlice.reducer
+export const { changeActive, changeAuth, changeAddHeroActive } = modalSlice.actions;
+export default modalSlice.reducer;

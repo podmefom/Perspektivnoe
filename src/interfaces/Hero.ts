@@ -1,7 +1,7 @@
 export interface HeroDB {
     id: string,
     id_user: string, 
-    img: string,
+    img: Uint8Array<ArrayBuffer> | undefined,
     name: string,
     type: string,
     description: string

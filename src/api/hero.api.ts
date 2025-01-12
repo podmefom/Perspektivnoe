@@ -1,3 +1,4 @@
+import { Hero } from "../interfaces/Hero";
 import {instance} from "./api"
 
 export const getHeroes = async () => {
@@ -18,3 +19,12 @@ export const getHero = async (id: string) => {
     return result.data;
 }
 
+export const createHero = async (data: Hero) => {
+    const result = await instance({
+        method: "POST",
+        url: `/heroes/`,
+        data
+    })
+
+    return result.data
+}
